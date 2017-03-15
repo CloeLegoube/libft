@@ -6,7 +6,7 @@
 /*   By: clegoube <clegoube@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 15:36:19 by clegoube          #+#    #+#             */
-/*   Updated: 2016/11/06 16:03:41 by clegoube         ###   ########.fr       */
+/*   Updated: 2016/11/14 10:29:37 by clegoube         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char		*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	int			len;
+	int		len;
 	size_t	i;
 
 	len = ft_strlen(s1);

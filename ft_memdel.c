@@ -6,7 +6,7 @@
 /*   By: clegoube <clegoube@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 21:30:56 by clegoube          #+#    #+#             */
-/*   Updated: 2016/11/07 22:24:39 by clegoube         ###   ########.fr       */
+/*   Updated: 2016/11/14 09:51:24 by clegoube         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void		ft_memdel(void **ap)
 {
-		free(*ap);
-		*ap = NULL;
+	free(*ap);
+	*ap = NULL;
 }

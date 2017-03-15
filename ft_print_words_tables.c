@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_print_words_tables.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: clegoube <clegoube@student.42.fr>          +#+  +:+       +#+        */
+/*   By: clegoube <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/06 17:34:13 by clegoube          #+#    #+#             */
-/*   Updated: 2016/11/17 13:40:27 by clegoube         ###   ########.fr       */
+/*   Created: 2016/11/15 11:21:45 by clegoube          #+#    #+#             */
+/*   Updated: 2016/11/15 11:21:52 by clegoube         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strchr(const char *s, int c)
+void	ft_print_words_tables(char **tab)
 {
 	int		i;
 
 	i = 0;
-	if ((char)c == '\0')
-		return ((char *)&s[ft_strlen(s)]);
-	while (s[i])
+	while (tab[i])
 	{
-		if (s[i] == (char)c)
-			return ((char *)(s + i));
-		i++;
+		ft_putstr(tab[i++]);
+		ft_putchar('\n');
 	}
-	if (s[i] == (char)c)
-		return ((char *)(s + i));
-	return (NULL);
 }

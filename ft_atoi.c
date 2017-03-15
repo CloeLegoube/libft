@@ -6,7 +6,7 @@
 /*   By: clegoube <clegoube@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 15:17:19 by clegoube          #+#    #+#             */
-/*   Updated: 2016/11/10 19:10:27 by clegoube         ###   ########.fr       */
+/*   Updated: 2016/11/17 13:38:35 by clegoube         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ int		ft_atoi(const char *str)
 			sign = -1;
 		i++;
 	}
-	if (str[i++] == '-')
-		sign = -1;
 	while (str[i] && (str[i] <= '9' && str[i] >= '0'))
 	{
 		result = result * 10 + (str[i] - '0');

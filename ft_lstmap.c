@@ -6,7 +6,7 @@
 /*   By: clegoube <clegoube@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 18:25:30 by clegoube          #+#    #+#             */
-/*   Updated: 2016/11/10 19:13:03 by clegoube         ###   ########.fr       */
+/*   Updated: 2016/11/14 09:51:13 by clegoube         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 
 	new = NULL;
 	if (lst && (*f))
- 	{
+	{
 		new = (*f)(lst);
 		tmp = new;
 		while (lst->next)

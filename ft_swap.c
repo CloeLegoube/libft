@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: clegoube <clegoube@student.42.fr>          +#+  +:+       +#+        */
+/*   By: clegoube <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/06 17:34:13 by clegoube          #+#    #+#             */
-/*   Updated: 2016/11/17 13:40:27 by clegoube         ###   ########.fr       */
+/*   Created: 2016/11/15 12:44:02 by clegoube          #+#    #+#             */
+/*   Updated: 2016/11/15 12:44:04 by clegoube         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strchr(const char *s, int c)
+void	ft_swap(int *a, int *b)
 {
-	int		i;
+	int c;
 
-	i = 0;
-	if ((char)c == '\0')
-		return ((char *)&s[ft_strlen(s)]);
-	while (s[i])
-	{
-		if (s[i] == (char)c)
-			return ((char *)(s + i));
-		i++;
-	}
-	if (s[i] == (char)c)
-		return ((char *)(s + i));
-	return (NULL);
+	c = *a;
+	*a = *b;
+	*b = c;
 }

@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*   ft_strsplitwhitespaces.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: clegoube <clegoube@student.42.fr>          +#+  +:+       +#+        */
+/*   By: clegoube <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/08 18:25:52 by clegoube          #+#    #+#             */
-/*   Updated: 2016/11/14 15:26:07 by clegoube         ###   ########.fr       */
+/*   Created: 2016/11/15 11:28:57 by clegoube          #+#    #+#             */
+/*   Updated: 2016/11/15 11:29:00 by clegoube         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int			ft_check_special_char(char chaine, char charset)
+static int			ft_check_special_char(char chaine)
 {
-	if (chaine == charset)
+	if ((chaine == ' ' || chaine == '\n' || chaine == '\t'))
 		return (1);
 	return (0);
 }
 
-static int			by_word(char *str, char charset)
+static int			by_word(char *str)
 {
 	int chaine;
 	int mot;
@@ -30,9 +30,9 @@ static int			by_word(char *str, char charset)
 	lettre = 0;
 	while (str[chaine])
 	{
-		if (!ft_check_special_char(str[chaine], charset) && str[chaine])
+		if (!ft_check_special_char(str[chaine]) && str[chaine])
 		{
-			if (ft_check_special_char(str[chaine + 1], charset)
+			if (ft_check_special_char(str[chaine + 1])
 				|| !str[chaine + 1])
 				++mot;
 		}
@@ -54,7 +54,7 @@ static t_var		*initialize_variables(void)
 	return (var);
 }
 
-static void			by_letter(char **tab, char *str, char charset)
+static void			by_letter(char **tab, char *str)
 {
 	int		chaine;
 	int		mot;
@@ -65,9 +65,9 @@ static void			by_letter(char **tab, char *str, char charset)
 	lettre = 0;
 	while (str[chaine])
 	{
-		if (!ft_check_special_char(str[chaine], charset) && str[chaine])
+		if (!ft_check_special_char(str[chaine]) && str[chaine])
 		{
-			if (ft_check_special_char(str[chaine + 1], charset)
+			if (ft_check_special_char(str[chaine + 1])
 				|| !str[chaine + 1])
 			{
 				tab[mot++] = (char*)malloc((lettre + 1) * sizeof(char));
@@ -80,24 +80,24 @@ static void			by_letter(char **tab, char *str, char charset)
 	tab[mot] = (char*)malloc((lettre + 1) * sizeof(char));
 }
 
-char				**ft_strsplit(char const *str, char charset)
+char				**ft_strsplitwhitespaces(char const *str)
 {
 	char	**tab;
 	t_var	*var;
 
-	if (!str || !charset)
+	if (!str)
 		return (NULL);
-	if (!(tab = (char**)malloc(by_word((char *)str, charset) * sizeof(char*))))
+	if (!(tab = (char**)malloc(by_word((char *)str) * sizeof(char*))))
 		return (NULL);
-	by_letter(tab, (char *)str, charset);
+	by_letter(tab, (char *)str);
 	var = initialize_variables();
 	while (str[++var->chaine])
 	{
-		if (!ft_check_special_char(str[var->chaine], charset) &&
+		if (!ft_check_special_char(str[var->chaine]) &&
 			str[var->chaine])
 		{
 			tab[var->mot][var->lettre++] = str[var->chaine];
-			if (ft_check_special_char(str[var->chaine + 1], charset) ||
+			if (ft_check_special_char(str[var->chaine + 1]) ||
 				!str[var->chaine + 1])
 			{
 				tab[var->mot++][var->lettre] = '\0';

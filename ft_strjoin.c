@@ -6,7 +6,7 @@
 /*   By: clegoube <clegoube@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/08 16:01:41 by clegoube          #+#    #+#             */
-/*   Updated: 2016/11/08 16:09:08 by clegoube         ###   ########.fr       */
+/*   Updated: 2016/11/14 12:31:44 by clegoube         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char		*ft_strjoin(char const *s1, char const *s2)
 	char	*new;
 
 	i = -1;
+	if (!s1 || !s2)
+		return (NULL);
 	new = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(*new));
 	if (new == NULL)
 		return (NULL);

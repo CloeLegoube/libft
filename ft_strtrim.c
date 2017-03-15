@@ -6,20 +6,20 @@
 /*   By: clegoube <clegoube@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/08 16:13:12 by clegoube          #+#    #+#             */
-/*   Updated: 2016/11/08 18:24:43 by clegoube         ###   ########.fr       */
+/*   Updated: 2016/11/14 14:47:09 by clegoube         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			is_whitespaces(char s)
+static int		is_whitespaces(char s)
 {
 	if (s == ' ' || s == '\n' || s == '\t')
 		return (1);
 	return (0);
 }
 
-char		*check_malloc(char character, int size_malloc)
+static char		*check_malloc(char character, int size_malloc)
 {
 	char	*copy;
 
@@ -33,13 +33,15 @@ char		*check_malloc(char character, int size_malloc)
 	return (copy);
 }
 
-char		*ft_strtrim(char const *s)
+char			*ft_strtrim(char const *s)
 {
 	char	*copy;
 	int		start;
 	int		end;
 	int		i;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	start = 0;
 	end = ft_strlen(s) - 1;

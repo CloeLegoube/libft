@@ -6,7 +6,7 @@
 /*   By: clegoube <clegoube@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/08 14:51:08 by clegoube          #+#    #+#             */
-/*   Updated: 2016/11/08 15:03:18 by clegoube         ###   ########.fr       */
+/*   Updated: 2016/11/14 12:24:48 by clegoube         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char		*ft_strmap(char const *s, char (*f)(char))
 	char		*fresh_string;
 
 	i = 0;
+	if (!s || !f)
+		return (NULL);
 	fresh_string = (char *)malloc((ft_strlen(s) + 1) * sizeof(*fresh_string));
 	if (fresh_string == NULL)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: clegoube <clegoube@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 20:34:20 by clegoube          #+#    #+#             */
-/*   Updated: 2016/11/07 19:01:01 by clegoube         ###   ########.fr       */
+/*   Updated: 2016/11/14 14:38:11 by clegoube         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ char		*ft_strnstr(const char *big, const char *little, size_t len)
 	i = 0;
 	if (little[i] == '\0')
 		return ((char *)big);
-	while (big[i] && i <= len)
+	while (big[i] && i < len)
 	{
 		j = 0;
-		while (big[i + j] == little[j] && big[i + j] && (i + j) <= len)
+		while (big[i + j] == little[j] && big[i + j] && (i + j) < len)
 		{
 			if (little[j + 1] == '\0')
 				return ((char *)&big[i]);

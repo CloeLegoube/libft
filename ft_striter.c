@@ -6,7 +6,7 @@
 /*   By: clegoube <clegoube@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/08 14:40:38 by clegoube          #+#    #+#             */
-/*   Updated: 2016/11/08 14:49:56 by clegoube         ###   ########.fr       */
+/*   Updated: 2016/11/14 12:20:12 by clegoube         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@ void		ft_striter(char *s, void (*f)(char *))
 	int i;
 
 	i = 0;
-	while (s[i])
-		f(&s[i++]);
+	if (s && f)
+	{
+		while (s[i])
+			f(&s[i++]);
+	}
 }

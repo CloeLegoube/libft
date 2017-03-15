@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: clegoube <clegoube@student.42.fr>          +#+  +:+       +#+        */
+/*   By: clegoube <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/06 17:34:13 by clegoube          #+#    #+#             */
-/*   Updated: 2016/11/17 13:40:27 by clegoube         ###   ########.fr       */
+/*   Created: 2016/11/15 12:49:56 by clegoube          #+#    #+#             */
+/*   Updated: 2016/11/15 12:49:58 by clegoube         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strchr(const char *s, int c)
+int		ft_str_is_lowercase(char *str)
 {
-	int		i;
+	int i;
+	int result;
 
 	i = 0;
-	if ((char)c == '\0')
-		return ((char *)&s[ft_strlen(s)]);
-	while (s[i])
+	result = 1;
+	while (str[i])
 	{
-		if (s[i] == (char)c)
-			return ((char *)(s + i));
+		if (str[i] >= 'a' && str[i] <= 'z')
+			result = 1;
+		else
+			return (0);
 		i++;
 	}
-	if (s[i] == (char)c)
-		return ((char *)(s + i));
-	return (NULL);
+	return (result);
 }
